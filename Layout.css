@@ -1,0 +1,33 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 250px; /* Largura do sidebar */
+  transition: margin-left 0.3s ease;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Quando o sidebar estiver fechado em mobile */
+.sidebar-open .main-content {
+  margin-left: 0;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+  
+  .content {
+    padding: 15px;
+  }
+}

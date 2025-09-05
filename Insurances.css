@@ -1,0 +1,217 @@
+.insurances {
+  padding: 20px;
+}
+
+.insurances-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.insurances-header h1 {
+  color: var(--primary-color);
+  font-size: 28px;
+  margin: 0;
+}
+
+.insurance-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.insurance-tabs button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--gray-color);
+  transition: all 0.3s;
+  border-bottom: 2px solid transparent;
+}
+
+.insurance-tabs button:hover {
+  background: var(--light-gray);
+  color: var(--primary-color);
+}
+
+.insurance-tabs button.active {
+  background: var(--primary-color);
+  color: white;
+  border-bottom-color: var(--primary-dark);
+}
+
+.insurances-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 20px;
+}
+
+.insurance-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid var(--primary-color);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.insurance-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.insurance-card.warning {
+  border-left-color: var(--warning-color);
+}
+
+.insurance-card.expired {
+  border-left-color: var(--danger-color);
+}
+
+.insurance-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.insurance-badge.warning {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.insurance-badge.expired {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.insurance-badge.vida {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.insurance-badge.empresarial {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.insurance-header {
+  margin-bottom: 15px;
+  padding-right: 60px;
+}
+
+.insurance-header h3 {
+  color: var(--dark-color);
+  font-size: 18px;
+  margin: 0 0 5px 0;
+}
+
+.insurance-type {
+  font-size: 14px;
+  color: var(--gray-color);
+}
+
+.insurance-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.insurance-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.insurance-detail label {
+  font-size: 12px;
+  color: var(--gray-color);
+  font-weight: 500;
+}
+
+.insurance-detail span {
+  color: var(--dark-color);
+  font-weight: 500;
+}
+
+.insurance-period {
+  grid-column: 1 / -1;
+  background: var(--light-gray);
+  padding: 10px;
+  border-radius: 6px;
+  margin: 10px 0;
+}
+
+.period-dates {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.insurance-actions {
+  display: flex;
+  gap: 8px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.file-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.file-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .insurance-tabs {
+    overflow-x: auto;
+    padding-bottom: 15px;
+  }
+  
+  .insurance-tabs button {
+    white-space: nowrap;
+  }
+  
+  .insurances-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .insurance-details {
+    grid-template-columns: 1fr;
+  }
+  
+  .insurance-actions {
+    flex-direction: column;
+  }
+  
+  .period-dates {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
